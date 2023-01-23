@@ -1,0 +1,144 @@
+:root {
+  /* COLORS */
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+
+  /* FONT FAMILY */
+  --ff-regular: "Montserrat", sans-serif;
+  --ff-special: "Fraunces", serif;
+
+  /* FONT WEIGHTS */
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--ff-regular);
+  font-size: 1.4rem;
+  font-weight: var(--fw-medium);
+  color: var(--dark-grayish-blue);
+}
+
+/**************************/
+/* GENERAL REUSABLE COMPONENTS */
+/**************************/
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--cream);
+  padding-inline: 2rem;
+  padding-block: 3rem;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 9px;
+  overflow: hidden;
+
+  max-width: 60rem;
+}
+
+.product-img {
+  background: url(../images/image-product-desktop.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.product-content {
+  padding: 3rem;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+
+  gap: 2.3rem;
+}
+
+.category {
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.heading-primary {
+  font-size: 3.4rem;
+  font-family: var(--ff-special);
+  font-weight: var(--fw-bold);
+  color: var(--very-dark-blue);
+  line-height: 1;
+}
+
+.product-description {
+  line-height: 1.6;
+}
+
+.product-prices {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.current-price {
+  font-family: var(--ff-special);
+  font-size: 3rem;
+  color: var(--dark-cyan);
+  font-weight: var(--fw-bold);
+}
+
+.product-cta {
+  border: 0;
+  background: var(--dark-cyan);
+  color: var(--white);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: var(--fw-bold);
+  padding: 1.5rem 3rem;
+  border-radius: 9px;
+
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.product-cta:hover,
+.product-cta:focus {
+  background: hsl(158, 42%, 18%);
+}
+
+@media (max-width: 39em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .product {
+    grid-template-columns: 1fr;
+  }
+
+  .product-img {
+    background: url(../images/image-product-mobile.jpg);
+    background-position: top center;
+    background-size: cover;
+    min-height: 30rem;
+    width: 100%;
+  }
+
+  .product-description {
+    width: 93%;
+  }
+}
